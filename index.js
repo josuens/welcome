@@ -152,4 +152,10 @@ async function generareCanvas(member) {
 }
 
 
-client.login(process.env.token)
+client
+  .login(token)
+  .catch(() =>
+    console.log(
+      `Probably an invalid bot token is provided, please check your bot token.`
+    )
+  );
